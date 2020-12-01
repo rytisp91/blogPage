@@ -1,0 +1,181 @@
+/* FLEX TOOLS */
+
+.d_flex {
+    display: flex
+}
+
+.just_c_center {
+    justify-content: center;
+}
+
+.a_items_center {
+    align-items: center;
+}
+
+.just_c_spc_btw {
+    justify-content: space-between;
+}
+
+.flex_dir_col {
+    flex-direction: column;
+}
+
+.flex_wrap {
+    flex-wrap: wrap;
+}
+
+/* BODY EDIT */
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+/* NAVBAR */
+
+.nav_bar {
+    height: 80px;
+    padding: 0 30px 0 30px;
+    background-color: #AA7F39;
+    color: white;
+}
+
+.nav_center a:link, a:visited {
+    color: white;
+    padding: 14px 25px;
+    text-decoration: none;
+}
+
+.right_button {
+    height: 20px;
+    width: 20px;
+    border-radius: 20px;
+    padding: 7px;
+    background-color: #AA7F39;
+    text-align: center;
+    transition: 500ms linear
+}
+
+.right_button:hover {
+    background-color: #aa9168;
+    cursor: pointer;
+}
+
+/* ASIDE */
+
+.aside {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(43, 43, 43, 0.8);
+}
+
+.aside-content {
+    width: 30%;
+    height: 100%;
+    position: relative;
+    margin-left: 68.5%;
+    right: 0;
+    background-color: #1d1d1d;
+    padding: 10px;
+    color: white;
+    font-size: 35px;
+    text-align: center;
+    animation-name: animateright;
+    animation-duration: 0.4s
+}
+
+@keyframes animateright {
+    from {
+        right: -300px;
+        opacity: 0
+    }
+    to {
+        right: 0;
+        opacity: 1
+    }
+}
+
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover, .close:focus {
+    color: rgb(112, 112, 112);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* HEADER */
+
+.coolBg {
+    background: url("../assets/funny-bg.jpeg");
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 100px;
+    font-family: 'The Girl Next Door', cursive;
+    color: snow;
+}
+
+.main_text {
+    font-size: 100px;
+}
+
+/* SECTION */
+
+.card {
+    width: 280px;
+    margin: 20px;
+    padding: 5px;
+    background-color: whitesmoke;
+    word-wrap: break-word;
+}
+
+.card img {
+    width: 280px;
+}
+
+/* .card h3 {
+    max-width: 280px;
+    overflow: hidden;
+} */
+
+#card img:hover {
+    opacity: 0.8;
+}
+
+/* FOOTER */
+
+.footer_main {
+    background-color: #000000;
+    padding: 30px;
+    color: white;
+}
+
+.fab {
+    font-size: 30px;
+    transition: 500ms linear
+}
+
+.fab:hover {
+    color: rgb(107, 107, 107);
+}
+
+.bar {
+    width: 80%;
+    background-color: rgb(168, 168, 168);
+    height: 1px;
+    margin: 5px;
+}
+
+.copy {
+    font-size: 7px;
+}
