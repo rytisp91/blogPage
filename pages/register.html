@@ -1,24 +1,19 @@
 <!DOCTYPE html>
 <html>
-
 <head>
 	<meta charset="UTF-8">
-	<title>BLOG</title>
-	<link rel="stylesheet" type="text/css" href="./CSS/indexStyle.css">
+	<title>Registration</title>
+	<link rel="stylesheet" type="text/css" href="../CSS/regStyle.css">
 	<script src="https://kit.fontawesome.com/42762d49f1.js" crossorigin="anonymous"></script>
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=The+Girl+Next+Door&display=swap" rel="stylesheet">
-	<script src="./JS/script.js" defer></script>
+	<script src="../JS/regScript.js" defer></script>
 </head>
-
 <body>
 
 	<nav>
 		<div class="nav_bar d_flex a_items_center just_c_spc_btw">
-			<img src="./assets/smiley.png" alt="logo" height="60px" width="60px">
+			<img src="../assets/smiley.png" alt="logo" height="60px" width="60px">
 			<div class="nav_center d_flex">
-				<a href="index.html">Home</a>
-				<a href="./pages/register.html">Register</a>
+				<a href="../index.html">Home</a>
 				<a href="./pages/logIn.html">Log in</a>
 				<a href="./pages/addPost.html">Add post</a>
 				<a href="./pages/about.html">About</a>
@@ -34,10 +29,10 @@
 			<div class="aside-content">
 				<span class="close">&times;</span>
 				<div class="about_me_aside d_flex flex_dir_col a_items_center">
-					<img src="./assets/myphoto.jpg" alt="photo" width="200px" height="200px">
+					<img src="../assets/myphoto.jpg" alt="photo" width="200px" height="200px">
 					<p>Welcome to my BLOG page. If you want more info - <a href="about.html">read this</a></p>
 					<p>OR go:</p>
-					<a href="index.html">Home</a>
+					<a href="../index.html">Home</a>
 					<a href="./pages/register.html">Register</a>
 					<a href="./pages/logIn.html">Log in</a>
 					<a href="./pages/addPost.html">Add post</a>
@@ -46,18 +41,18 @@
 		</div>
 	</aside>
 
-	<header>
-		<div class="coolBg d_flex a_items_center flex_dir_col">
-			<p class="main_text">Masonry BLOG</p>
-			<p>Your ideas - our fullfilment.</p>
+	<main>
+		<div class="registration_main">
+			<form>
+				<label for="user">User name:</label><br>
+				<input type="text" id="user" name="user"><br>
+				<label for="pass1">Password:</label><br>
+				<input type="password" id="pass1" name="pass1"><br>
+				<label for="pass2">Repeat password:</label><br>
+				<input type="password" id="pass2" name="pass2"><br>
+			  </form>
 		</div>
-	</header>
-
-	<section>
-		<div class="d_flex flex_wrap just_c_center" id="postsContainer">
-
-		</div>
-	</section>
+	</main>
 
 	<footer>
 		<div class="footer_main d_flex a_items_center flex_dir_col">
@@ -71,5 +66,4 @@
 	</footer>
 
 </body>
-
 </html>

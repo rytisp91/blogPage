@@ -29,7 +29,7 @@ closeAsideBtn.addEventListener(`click`, asideTools.closeAsideByBtn)
 getPosts()
 
 function getPosts() {
-    fetch('https://167.99.138.67:1111/getallposts')
+    fetch('http://167.99.138.67:1111/getallposts')
         .then(response => response.json())
         .then(data => {
             postsArr = data.data
@@ -59,5 +59,3 @@ function generatePosts() {
     })
 
 }
-
-
