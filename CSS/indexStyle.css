@@ -40,7 +40,13 @@ body {
     color: white;
 }
 
-.nav_center a:link, a:visited {
+.nav_center a:link {
+    color: white;
+    padding: 14px 25px;
+    text-decoration: none;
+}
+
+.nav_center a:visited {
     color: white;
     padding: 14px 25px;
     text-decoration: none;
@@ -92,7 +98,12 @@ body {
     padding: 100px 30px;
 }
 
-.about_me_aside a:link, a:visited {
+.about_me_aside a:link {
+    color: white;
+    text-decoration: none;
+}
+
+.about_me_aside a:visited {
     color: white;
     text-decoration: none;
 }
@@ -178,7 +189,8 @@ body {
 
 .fab {
     font-size: 30px;
-    transition: 500ms linear
+    transition: 500ms linear;
+    color: white;
 }
 
 .fab:hover {

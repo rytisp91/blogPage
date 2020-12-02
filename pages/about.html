@@ -1,24 +1,24 @@
 <!DOCTYPE html>
-<html>
 
 <head>
-	<meta charset="UTF-8">
-	<title>Registration</title>
-	<link rel="stylesheet" type="text/css" href="../CSS/regStyle.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" type="text/css" href="../CSS/aboutStyle.css">
 	<script src="https://kit.fontawesome.com/42762d49f1.js" crossorigin="anonymous"></script>
-	<script src="../JS/regScript.js" defer></script>
+	<script src="../JS/aboutScript.js" defer></script>
 </head>
 
 <body>
 
-	<nav>
+    <nav>
 		<div class="nav_bar d_flex a_items_center just_c_spc_btw">
 			<img src="../assets/smiley.png" alt="logo" height="60px" width="60px">
 			<div class="nav_center d_flex">
 				<a href="../index.html">Home</a>
+				<a href="../pages/register.html">Register</a>
 				<a href="../pages/logIn.html">Log in</a>
 				<a href="../pages/addPost.html">Add post</a>
-				<a href="../pages/about.html">About</a>
 			</div>
 			<span class="right_button" id="menuAside">
 				<i class="fas fa-bars"></i>
@@ -41,27 +41,18 @@
 				</div>
 			</div>
 		</div>
-	</aside>
+    </aside>
+    
+    <article>
+        <div class="main">
+            <p>
+                This page was coded to show HTML/CSS/Jscript skills gained at school called CodeAcademy. <br>
+                Greet's to sensei <a href="https://www.instagram.com/havetowear_hfr/">Andy</a>.
+            </p>
+        </div>
+    </article>
 
-	<main>
-		<div class="registration_main d_flex flex_dir_col a_items_center" id="regForm">
-			<form>
-				<label for="user">User name:</label><br>
-				<input type="text" id="user" name="user" placeholder="Don't use spaces"><br>
-				<label for="pass1">Password:</label><br>
-				<input type="password" id="pass1" name="pass1" placeholder="Min 6 chars"><br>
-				<label for="pass2">Repeat password:</label><br>
-				<input type="password" id="pass2" name="pass2" placeholder="Repeat 6 chars again"><br>
-			</form>
-			<button id="regBtn">Register</button>
-		</div>
-
-		<div class="registration_main" id="regSuccess">
-			Registration successful! You can login now.
-		</div>
-	</main>
-
-	<footer>
+    <footer>
 		<div class="footer_main d_flex a_items_center flex_dir_col">
 			<div class="social_networks">
 				<a href="https://www.instagram.com/rytis.povilaitis91/"><i class="fab fa-instagram-square"></i></a>

@@ -138,16 +138,11 @@ body {
 
 /* MAIN */
 
-.registration_main {
+.main {
     background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(240, 240, 240, 1) 50%, rgba(255, 255, 255, 1) 100%);
-    padding: 200px;
-}
-
-#regSuccess {
-    display: none;
-    padding-top: 300px;
+    height: 500px;
+    padding: 30px;
     text-align: center;
-    font-size: xx-large;
 }
 
 /* FOOTER */
