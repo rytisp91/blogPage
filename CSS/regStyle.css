@@ -132,6 +132,13 @@ body {
     padding: 200px;
 }
 
+#regSuccess {
+    display: none;
+    padding-top: 300px;
+    text-align: center;
+    font-size: xx-large;
+}
+
 /* FOOTER */
 
 .footer_main {

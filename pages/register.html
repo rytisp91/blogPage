@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="UTF-8">
 	<title>Registration</title>
@@ -7,6 +8,7 @@
 	<script src="https://kit.fontawesome.com/42762d49f1.js" crossorigin="anonymous"></script>
 	<script src="../JS/regScript.js" defer></script>
 </head>
+
 <body>
 
 	<nav>
@@ -42,15 +44,20 @@
 	</aside>
 
 	<main>
-		<div class="registration_main">
+		<div class="registration_main d_flex flex_dir_col a_items_center" id="regForm">
 			<form>
 				<label for="user">User name:</label><br>
-				<input type="text" id="user" name="user"><br>
+				<input type="text" id="user" name="user" placeholder="Don't use spaces"><br>
 				<label for="pass1">Password:</label><br>
-				<input type="password" id="pass1" name="pass1"><br>
+				<input type="password" id="pass1" name="pass1" placeholder="Min 6 chars"><br>
 				<label for="pass2">Repeat password:</label><br>
-				<input type="password" id="pass2" name="pass2"><br>
-			  </form>
+				<input type="password" id="pass2" name="pass2" placeholder="Repeat 6 chars again"><br>
+			</form>
+			<button id="regBtn">Register</button>
+		</div>
+
+		<div class="registration_main" id="regSuccess">
+			Registration successful! You can login now.
 		</div>
 	</main>
 
@@ -66,4 +73,5 @@
 	</footer>
 
 </body>
+
 </html>
