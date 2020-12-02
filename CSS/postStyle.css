@@ -136,48 +136,13 @@ body {
     cursor: pointer;
 }
 
-/* HEADER */
+/* ARTICLE */
 
-.coolBg {
-    background: url("../assets/funny-bg.jpeg");
-    background-size: cover;
-    background-attachment: fixed;
-    padding: 100px;
-    font-family: 'The Girl Next Door', cursive;
-    color: snow;
-}
-
-.main_text {
-    font-size: 100px;
-}
-
-/* SECTION */
-
-.main {
+#postContainer {
     background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(240, 240, 240, 1) 50%, rgba(255, 255, 255, 1) 100%);
+    padding: 30px;
 }
 
-.card {
-    width: 280px;
-    margin: 20px;
-    padding: 5px;
-    word-wrap: break-word;
-    background: linear-gradient(90deg, rgba(240, 240, 240, 1) 0%, rgba(255, 255, 255, 1) 50%, rgba(240, 240, 240, 1) 100%);
-    border-radius: 5px;
-}
-
-.card img {
-    width: 280px;
-    border-radius: 5px;
-}
-
-.card h3 {
-    cursor: pointer;
-}
-
-#card img:hover {
-    opacity: 0.8;
-}
 
 /* FOOTER */
 

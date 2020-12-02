@@ -51,7 +51,9 @@ function register() {
                     })
                         .then(response => response.json())
                         .then(data => {
-                            if (data.success) {
+                            if (data.message === "Name is already taken") {
+                                alert("This user name allready exists")
+                            } else {
                                 regForm.style.display = `none`
                                 regSuccess.style.display = `block`
                             }
