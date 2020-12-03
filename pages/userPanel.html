@@ -3,10 +3,10 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Login</title>
-	<link rel="stylesheet" type="text/css" href="../CSS/loginStyle.css">
+	<title>User panel</title>
+	<link rel="stylesheet" type="text/css" href="../CSS/userPanelStyle.css">
 	<script src="https://kit.fontawesome.com/42762d49f1.js" crossorigin="anonymous"></script>
-	<script src="../JS/logScript.js" defer></script>
+	<script src="../JS/userPanelScript.js" defer></script>
 </head>
 
 <body>
@@ -17,7 +17,7 @@
 			<div class="nav_center d_flex">
 				<a href="../index.html">Home</a>
 				<a href="../pages/register.html">Register</a>
-				<a href="../pages/userPanel.html">User panel</a>
+				<a href="../pages/logIn.html">Log in</a>
 				<a href="../pages/about.html">About</a>
 			</div>
 			<span class="right_button" id="menuAside">
@@ -36,7 +36,7 @@
 					<p>OR go:</p>
 					<a href="../index.html">Home</a>
 					<a href="../pages/register.html">Register</a>
-					<a href="../pages/userPanel.html">User panel</a>
+					<a href="../pages/logIn.html">Log in</a>
 					<a href="../pages/about.html">About</a>
 				</div>
 			</div>
@@ -44,14 +44,34 @@
 	</aside>
 
 	<main>
-		<div class="log_main d_flex flex_dir_col a_items_center">
+
+		<div id="creating" class="d_flex flex_dir_col a_items_center">
 			<form>
-				<label for="user">User name:</label><br>
-				<input type="text" id="user" name="user" placeholder="Enter your user name"><br>
-				<label for="pass">Password:</label><br>
-				<input type="password" id="pass" name="pass" placeholder="Enter your password"><br>
+				<label for="image">Image URL:</label><br>
+				<input type="text" id="image" name="image" placeholder="Don't forget https://"><br>
+				<label for="title">Title:</label><br>
+				<textarea id="title" name="title" rows="3" cols="40" placeholder="Minimum 20 characters"></textarea><br>
+				<label for="description">Description:</label><br>
+				<textarea id="description" name="description" rows="4" cols="50" placeholder="Minimum 50 characters"></textarea></textarea><br>
 			</form>
-			<button id="logBtn">Log in</button>
+			<button id="send">Send post</button>
+			<button id="update">Update</button>
+			<button id="backToPosts">Go back</button>
+		</div>
+
+		<div class="main d_flex flex_dir_col a_items_center">
+			<h1>Post's you wrote:</h1>
+			<button id="addPost">Add new</button>
+			<div id="postContainer" class="d_flex flex_wrap just_c_center">
+
+			</div>
+			<button id="goBack">Home</button>
+		</div>
+
+		<div id="question" class="modal">
+			<div class="modal-content">
+
+			</div>
 		</div>
 	</main>
 

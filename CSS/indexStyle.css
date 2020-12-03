@@ -171,14 +171,6 @@ body {
     border-radius: 5px;
 }
 
-.card h3 {
-    cursor: pointer;
-}
-
-#card img:hover {
-    opacity: 0.8;
-}
-
 /* FOOTER */
 
 .footer_main {

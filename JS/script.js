@@ -3,8 +3,6 @@ const aside = document.getElementById('aside')
 const menuAside = document.getElementById('menuAside')
 const closeAsideBtn = document.getElementsByClassName("close")[0]
 const postsContainer = document.getElementById('postsContainer')
-const userSelector = document.getElementById('userSelector')
-const filterBtn = document.getElementById('filter')
 
 // VARS
 let asideTools = {
@@ -21,15 +19,15 @@ let asideTools = {
     }
 }
 let postsArr
-let authors = []
-let userSelected
+let logged = JSON.parse(localStorage.getItem('user'))
 
 // LISTENERS
 window.addEventListener('click', asideTools.closeAside)
 menuAside.addEventListener('click', asideTools.openAside)
 closeAsideBtn.addEventListener(`click`, asideTools.closeAsideByBtn)
-filterBtn.addEventListener(`click`, filter)
+
 // FUNCTIONS
+
 getPosts()
 
 function getPosts() {
@@ -38,48 +36,7 @@ function getPosts() {
         .then(data => {
             postsArr = data.data
             generatePosts()
-            filterSelector()
         })
-}
-
-function filterSelector() {
-    let tempAuthors = []
-
-    postsArr.map(item => {
-        tempAuthors.push(item.username)
-    })
-
-    tempAuthors.map(el => {
-        if (!authors.includes(el)) {
-            authors.push(el)
-        }
-    })
-
-    authors.map(item => {
-        let option = document.createElement('option');
-        option.value = option.text = item;
-
-        userSelector.add(option); 
-    })
-
-}
-
-function filter(){
-    if(userSelector.value !== "showAll"){
-            fetch(`http://167.99.138.67:1111/getuserposts/${userSelector.value}`)
-    .then(response => response.json())
-    .then(data => {
-        postsArr = data.data
-        generatePosts()
-    })
-    } else {
-        fetch('http://167.99.138.67:1111/getallposts')
-        .then(response => response.json())
-        .then(data => {
-            postsArr = data.data
-            generatePosts()
-        })
-    }
 }
 
 function generatePosts() {
@@ -97,16 +54,31 @@ function generatePosts() {
 
         let title = document.createElement(`h3`)
         title.innerHTML = item.title
+        title.style.cursor = `pointer`
 
         let author = document.createElement(`p`)
         author.innerText = item.username
+        author.style.cursor = `pointer`
+
+        let time = document.createElement(`p`)
+        time.innerText = `${new Date(item.timestamp).toLocaleDateString("lt-LT")} ${new Date(item.timestamp).toLocaleTimeString("lt-LT")}` 
+        time.style.fontSize = `small`
+
+        let edit = document.createElement(`button`)
+        edit.innerText = `Edit/Delete`
 
         postsContainer.appendChild(card)
         card.appendChild(img)
+        card.appendChild(time)
         card.appendChild(title)
         card.appendChild(author)
-
+        if(logged.username === item.username){
+            card.appendChild(edit)
+        }
+        
+        edit.addEventListener(`click`, openPanel)
         title.addEventListener(`click`, openPost)
+        author.addEventListener(`click`, openUserPosts)
     })
 
 }
@@ -118,3 +90,14 @@ function openPost(event) {
     }))
     window.location.href = './pages/post.html'
 }
+
+function openUserPosts(event) {
+    localStorage.setItem('userPostsInfo', JSON.stringify(event.path[1].attributes[2].value))
+    window.location.href = './pages/userPosts.html'
+}
+
+function openPanel() {
+    window.location.href = './pages/userPanel.html'
+}
+
+

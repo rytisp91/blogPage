@@ -1,12 +1,14 @@
 <!DOCTYPE html>
+<html>
 
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Login</title>
-	<link rel="stylesheet" type="text/css" href="../CSS/loginStyle.css">
+	<title>Users posts</title>
+	<link rel="stylesheet" type="text/css" href="../CSS/userPosts.css">
 	<script src="https://kit.fontawesome.com/42762d49f1.js" crossorigin="anonymous"></script>
-	<script src="../JS/logScript.js" defer></script>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=The+Girl+Next+Door&display=swap" rel="stylesheet">
+	<script src="../JS/userPostsScript.js" defer></script>
 </head>
 
 <body>
@@ -17,6 +19,7 @@
 			<div class="nav_center d_flex">
 				<a href="../index.html">Home</a>
 				<a href="../pages/register.html">Register</a>
+				<a href="../pages/logIn.html">Log in</a>
 				<a href="../pages/userPanel.html">User panel</a>
 				<a href="../pages/about.html">About</a>
 			</div>
@@ -35,23 +38,21 @@
 					<p>Welcome to my BLOG page. If you want more info - <a href="about.html">read this</a></p>
 					<p>OR go:</p>
 					<a href="../index.html">Home</a>
-					<a href="../pages/register.html">Register</a>
-					<a href="../pages/userPanel.html">User panel</a>
-					<a href="../pages/about.html">About</a>
+					<a href="./pages/register.html">Register</a>
+					<a href="./pages/logIn.html">Log in</a>
+					<a href="./pages/userPanel.html">User panel</a>
 				</div>
 			</div>
 		</div>
 	</aside>
 
 	<main>
-		<div class="log_main d_flex flex_dir_col a_items_center">
-			<form>
-				<label for="user">User name:</label><br>
-				<input type="text" id="user" name="user" placeholder="Enter your user name"><br>
-				<label for="pass">Password:</label><br>
-				<input type="password" id="pass" name="pass" placeholder="Enter your password"><br>
-			</form>
-			<button id="logBtn">Log in</button>
+		<div class="main d_flex flex_dir_col a_items_center">
+			<h1 id="author"></h1>
+			<div id="postContainer" class="d_flex flex_wrap just_c_center">
+
+			</div>
+			<button id="goBack">Go back</button>
 		</div>
 	</main>
 

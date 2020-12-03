@@ -3,6 +3,8 @@ const aside = document.getElementById('aside')
 const menuAside = document.getElementById('menuAside')
 const closeAsideBtn = document.getElementsByClassName("close")[0]
 const postContainer = document.getElementById('postContainer')
+const backBtn = document.getElementById('goBack')
+const author = document.getElementById('author')
 
 // VARS
 let asideTools = {
@@ -18,28 +20,33 @@ let asideTools = {
         aside.style.display = "none"
     }
 }
-let postInfo = JSON.parse(localStorage.getItem('postInfo'))
+let userPostsInfo = JSON.parse(localStorage.getItem('userPostsInfo'))
 let postArr
 
 // LISTENERS
 window.addEventListener('click', asideTools.closeAside)
 menuAside.addEventListener('click', asideTools.openAside)
 closeAsideBtn.addEventListener(`click`, asideTools.closeAsideByBtn)
+backBtn.addEventListener('click', goBack)
 
 // FUNCTIONS
 
 getPost()
 
 function getPost() {
-    fetch(`http://167.99.138.67:1111/getsinglepost/${postInfo.name}/${postInfo.id}`)
+    fetch(`http://167.99.138.67:1111/getuserposts/${userPostsInfo}`)
         .then(response => response.json())
         .then(data => {
-            postArr = [data.data]
+            postArr = data.data
+            console.log(data);
             generatePost()
         })
 }
 
 function generatePost() {
+
+    author.innerHTML = `Post's created by: ${userPostsInfo}`
+
     postArr.map(item=>{
         let card = document.createElement(`div`)
         card.classList.add(`card`)
@@ -47,31 +54,22 @@ function generatePost() {
         let img = document.createElement(`img`)
         img.src = item.image
 
-        let time = document.createElement(`p`)
-        time.innerText = `Date added: ${new Date(item.timestamp).toLocaleDateString("lt-LT")} ${new Date(item.timestamp).toLocaleTimeString("lt-LT")}` 
-        time.style.fontSize = `small`
-
         let title = document.createElement(`h3`)
         title.innerHTML = item.title
-
-        let author = document.createElement(`p`)
-        author.innerText = `Author: ${item.username}`
 
         let description = document.createElement(`p`)
         description.innerHTML = item.description
 
-        let back = document.createElement(`button`)
-        back.innerText = `Go back`
+        let time = document.createElement(`p`)
+        time.innerText = `${new Date(item.timestamp).toLocaleDateString("lt-LT")} ${new Date(item.timestamp).toLocaleTimeString("lt-LT")}` 
+        time.style.fontSize = `small`
 
         postContainer.appendChild(card)
         card.appendChild(img)
         card.appendChild(time)
-        card.appendChild(author)
         card.appendChild(title)
         card.appendChild(description)
-        card.appendChild(back)
 
-        back.addEventListener(`click`, goBack)
     })
 }
 
