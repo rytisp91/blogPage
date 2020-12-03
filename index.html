@@ -48,13 +48,21 @@
 
 	<header>
 		<div class="coolBg d_flex a_items_center flex_dir_col">
-			<p class="main_text">Masonry BLOG</p>
+			<p class="main_text">Happy BLOG</p>
 			<p>Your ideas - our fullfilment.</p>
 		</div>
 	</header>
 
 	<section>
 		<div class="main d_flex flex_dir_col a_items_center">
+			<div>
+				<label for="date">Filter by date:</label>
+				<select name="date" id="dateSelector">
+					<option value="newOld">Newest --> Oldest</option>
+					<option value="oldNew">Oldest --> Newest</option>
+				</select>
+				<button id="filter">Filter</button>
+			</div>
 			<div id="postsContainer" class="d_flex flex_wrap just_c_center ">
 
 			</div>

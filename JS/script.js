@@ -3,6 +3,8 @@ const aside = document.getElementById('aside')
 const menuAside = document.getElementById('menuAside')
 const closeAsideBtn = document.getElementsByClassName("close")[0]
 const postsContainer = document.getElementById('postsContainer')
+const dateSelector = document.getElementById('dateSelector')
+const filterBtn = document.getElementById('filter')
 
 // VARS
 let asideTools = {
@@ -25,6 +27,7 @@ let logged = JSON.parse(localStorage.getItem('user'))
 window.addEventListener('click', asideTools.closeAside)
 menuAside.addEventListener('click', asideTools.openAside)
 closeAsideBtn.addEventListener(`click`, asideTools.closeAsideByBtn)
+filterBtn.addEventListener(`click`, filter)
 
 // FUNCTIONS
 
@@ -100,4 +103,17 @@ function openPanel() {
     window.location.href = './pages/userPanel.html'
 }
 
-
+function filter(){
+    if(dateSelector.value === `newOld`){
+        postsArr.sort(function(x,y){
+            return  y.timestamp - x.timestamp
+        })
+        generatePosts()
+    }
+    if(dateSelector.value === `oldNew`){
+        postsArr.sort(function(x,y){
+            return  x.timestamp - y.timestamp
+        })
+        generatePosts()
+    }
+}
