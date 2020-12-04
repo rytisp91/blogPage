@@ -140,7 +140,8 @@ body {
 
 .registration_main {
     background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(240, 240, 240, 1) 50%, rgba(255, 255, 255, 1) 100%);
-    padding: 200px;
+    height: 45vh;
+    padding: 100px;
 }
 
 #regSuccess {
