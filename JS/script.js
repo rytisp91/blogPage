@@ -64,7 +64,7 @@ function generatePosts() {
         author.style.cursor = `pointer`
 
         let time = document.createElement(`p`)
-        time.innerText = `${new Date(item.timestamp).toLocaleDateString("lt-LT")} ${new Date(item.timestamp).toLocaleTimeString("lt-LT")}` 
+        time.innerText = `${new Date(item.timestamp).toLocaleDateString("lt-LT")} ${new Date(item.timestamp).toLocaleTimeString("lt-LT")}`
         time.style.fontSize = `small`
 
         let edit = document.createElement(`button`)
@@ -75,10 +75,12 @@ function generatePosts() {
         card.appendChild(time)
         card.appendChild(title)
         card.appendChild(author)
-        if(logged.username === item.username){
-            card.appendChild(edit)
+        if (logged !== null) {
+            if (logged.username === item.username) {
+                card.appendChild(edit)
+            }
         }
-        
+
         edit.addEventListener(`click`, openPanel)
         title.addEventListener(`click`, openPost)
         author.addEventListener(`click`, openUserPosts)
@@ -103,16 +105,16 @@ function openPanel() {
     window.location.href = './pages/userPanel.html'
 }
 
-function filter(){
-    if(dateSelector.value === `newOld`){
-        postsArr.sort(function(x,y){
-            return  y.timestamp - x.timestamp
+function filter() {
+    if (dateSelector.value === `newOld`) {
+        postsArr.sort(function (x, y) {
+            return y.timestamp - x.timestamp
         })
         generatePosts()
     }
-    if(dateSelector.value === `oldNew`){
-        postsArr.sort(function(x,y){
-            return  x.timestamp - y.timestamp
+    if (dateSelector.value === `oldNew`) {
+        postsArr.sort(function (x, y) {
+            return x.timestamp - y.timestamp
         })
         generatePosts()
     }

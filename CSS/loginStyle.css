@@ -88,7 +88,7 @@ body {
     margin-left: 70%;
     right: 0;
     background-color: #1d1d1d;
-    color: white;
+    color: rgb(136, 136, 136);
     text-align: center;
     animation-name: animateright;
     animation-duration: 0.4s
